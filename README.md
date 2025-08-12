@@ -1,12 +1,38 @@
-# React + Vite
+# Mindmap – Web version
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A node-based mind mapping system for designing and planning projects.  
+Supports multi-parent relationships and cycles (not just trees).  
+This app is local-first: it runs entirely in the browser and saves to your device.  
+Cloud share/collab will come later.
 
-Currently, two official plugins are available:
+## Features (planned → shipping)
+- Create/edit nodes (name, description, tags)
+- Connect nodes (directed edges), multi-parent nodes
+- Drag to move / pan / zoom canvas
+- Views: all nodes, focus node, descendants/ancestors (cycle-safe)
+- Undo/redo via command stack
+- Local autosave (IndexedDB) + export/import (.mindmap.json)
+- Keyboard shortcuts (N new, Del delete, Ctrl/Cmd+Z undo)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+React + TypeScript + Vite  
+React Flow (graph)  
+Zustand + Immer (state management)  
+IndexedDB (`idb-keyval`) for local persistence  
+Zod (schema validation)  
+Chakra UI (UI components)  
+Jest + React Testing Library (tests)
 
-## Expanding the ESLint configuration
+## Quick Start
+```bash
+git clone https://github.com/CalebZberg/mindmap-web.git
+cd mindmap-web
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Current Status
+Scaffold only
+
+License
+MIT
